@@ -33,11 +33,7 @@ class DTMFGenerator: public QIODevice
 
 public:
     DTMFGenerator(int Fmin, int Step, QObject *parent);
-    int* DataToFreq(char Data);
-    void setData(QByteArray* dataArray);
-    void DataString(QString str);
-    void FillOne(char Data, unsigned int pos);
-    void FillData();
+    void prepareBufferToSend(QString str);
     ~DTMFGenerator();
 
 };

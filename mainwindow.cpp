@@ -7,8 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
    DTMFGenerator dtmfgenerator(17000,300,this);
-   dtmfgenerator.DataString("03AF2B");
-   dtmfgenerator.FillData();
+   //dtmfgenerator.DataString("03AF2B");
+   dtmfgenerator.prepareBufferToSend("03AF2B");
 }
 
 MainWindow::~MainWindow()
