@@ -16,15 +16,15 @@ class DTMFGenerator: public QIODevice
 
     qint64 m_pos;
     int f[8];
-    int Duration = 0;
-    int BufferSize=0;
+    int Duration;
+    int BufferSize;
     int step;
     int fmin;
-    const int SampleRate = 44100;
+    int SampleRate;
     unsigned int bufferpos;
     QAudioFormat AudioFormat;
     QVector<qint16> Buffer;
-    short* BufferPtr;
+    qint16* BufferPtr;
     QByteArray data;
 
     qint64 readData(char *data, qint64 len);
@@ -34,6 +34,10 @@ class DTMFGenerator: public QIODevice
 public:
     DTMFGenerator(int Fmin, int Step, QObject *parent);
     int* DataToFreq(char Data);
+    void setData(QByteArray* dataArray);
+    void DataString(QString str);
+    void FillOne(char Data, unsigned int pos);
+    void FillData();
     ~DTMFGenerator();
 
 };
