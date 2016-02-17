@@ -25,6 +25,11 @@ void DTMFGenerator::setData(QByteArray* dataArray)
     *data=dataArray;
 }
 
+void DTMFGenerator::getDataString(QString str)
+{
+
+}
+
 void DTMFGenerator::FillBuffer(char Data)
 {
     if (Data>0x0F) return;
