@@ -10,6 +10,7 @@
 #include "QByteArray"
 #include "QDebug"
 #include "qmath.h"
+#include "dtmfgenerator.h"
 namespace Ui {
 class MainWindow;
 }
@@ -24,12 +25,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QAudioOutput* audio_output;
-    QBuffer* Buffer;
-    QByteArray* Data;
+
 private slots:
-    void state_changed(QAudio::State);
-    void notify(void);
+
 };
 
 #endif // MAINWINDOW_H
