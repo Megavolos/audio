@@ -62,13 +62,12 @@ void DTMFGenerator::FillData()
     {
         for (unsigned int i = 0; i<(samples_per_frame);i++)
         {
-
             int f1=f[data[n]%4];
             int f2=f[data[n]/4 + 4];
             qreal sin1 = qSin(2*M_PI*f1*i/SampleRate);
             qreal sin2 = qSin(2*M_PI*f2*i/SampleRate);
             qreal sum = (sin1+sin2)/2;
-            BufferPtr[i]=(qint16)(32767*sum);
+            BufferPtr[i+samples_per_frame*n]=(qint16)(32767*sum);
         }
     }
 }
