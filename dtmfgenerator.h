@@ -1,14 +1,12 @@
 #ifndef DTMFGENERATOR_H
 #define DTMFGENERATOR_H
-#include <QAudioFormat>
-#include <QAudioOutput>
-#include <QAudio>
-#include <QAudioDeviceInfo>
+
 #include <QBuffer>
 #include <QByteArray>
 #include <QDebug>
 #include <QIODevice>
 #include "qmath.h"
+#include "qendian.h"
 
 class DTMFGenerator: public QIODevice
 {
@@ -22,18 +20,20 @@ class DTMFGenerator: public QIODevice
     int fmin;
     int SampleRate;
     unsigned int bufferpos;
-    QAudioFormat AudioFormat;
-    QVector<qint16> Buffer;
-    qint16* BufferPtr;
+
+    QByteArray Buffer;
+    unsigned char* BufferPtr;
     QByteArray data;
 
-    qint64 readData(char *data, qint64 len);
-    qint64 writeData(const char *data, qint64 len);
+
     void FillBuffer(char Data);
 
 public:
     DTMFGenerator(int Fmin, int Step, QObject *parent);
-    void prepareBufferToSend(QString str);
+    void prepareBufferToSend(QString str);    
+    qint64 readData(char *data, qint64 len);
+    qint64 writeData(const char *data, qint64 len);
+
     ~DTMFGenerator();
 
 };

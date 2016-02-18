@@ -15,9 +15,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dtmfgenerator.cpp
+    dtmfgenerator.cpp \
+    audio.cpp
 
 HEADERS  += mainwindow.h \
-    dtmfgenerator.h
+    dtmfgenerator.h \
+    audio.h
 
 FORMS    += mainwindow.ui

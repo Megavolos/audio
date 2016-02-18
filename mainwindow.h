@@ -10,7 +10,7 @@
 #include "QByteArray"
 #include "QDebug"
 #include "qmath.h"
-#include "dtmfgenerator.h"
+#include "audio.h"
 namespace Ui {
 class MainWindow;
 }
@@ -21,6 +21,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    Audio *audio;
     ~MainWindow();
 
 private:
