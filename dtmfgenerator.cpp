@@ -27,9 +27,9 @@ void DTMFGenerator::prepareBufferToSend(QString str)
             int f1=f[digit%4];
             int f2=f[digit/4 + 4];
             qreal sin1 = qSin(2*M_PI*f1*i/SampleRate);
-            qreal sin2 = qSin(2*M_PI*f2*i/SampleRate);
+            qreal sin2 = qSin(2*M_PI*f2*i/SampleRate+M_PI);
             qreal sum = (sin1+sin2)/2;
-            qint16 val = static_cast<qint16>(32767*sum);
+            qint16 val = static_cast<qint16>(32767*sum*0.3);
             qToLittleEndian<qint16>(val,BufferPtr);
             BufferPtr+=2;
 

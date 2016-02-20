@@ -17,7 +17,7 @@ Audio::Audio(int sampleRate, QObject *parent)
     audioOutput = new QAudioOutput(audioDeviceInfo,audioFormat,parent);
 
     dtmfgenerator=new DTMFGenerator(17000,300,parent);
-    dtmfgenerator->prepareBufferToSend("111111111111111111");
+    dtmfgenerator->prepareBufferToSend("11111111111111222222222222222233333333333333333aaaaaaaaaaaaaaaaaaB137AB8F2C6E0AA0AB764527FFAEEEEAE6E50011");
 }
 
 void Audio::start()
