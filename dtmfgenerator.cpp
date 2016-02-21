@@ -35,17 +35,17 @@ void DTMFGenerator::prepareBufferToSend(QString str)
 
         }
     }
-   /* for (int i=0;i<44100;i++)
-    {
-        int f1=f[4%4];
-        int f2=f[4/4 + 4];
-        qreal sin1 = qSin(2*M_PI*f1*i/SampleRate);
-        qreal sin2 = qSin(2*M_PI*f2*i/SampleRate);
-        qreal sum = (sin1+sin2)/2;
-        qint16 value=static_cast<qint16>(32767*sum);
-        qToLittleEndian<qint16>(value,BufferPtr);
-        BufferPtr+=2;
-    }*/
+//    for (int i=0;i<44100;i++)
+//    {
+//        int f1=f[3%4];
+//        int f2=f[3/4 + 4];
+//        qreal sin1 = qSin(2*M_PI*f1*i/SampleRate);
+//        qreal sin2 = qSin(2*M_PI*f2*i/SampleRate);
+//        qreal sum = (sin1+sin2)/2;
+//        qint16 value=static_cast<qint16>(32767*sum);
+//        qToLittleEndian<qint16>(value,BufferPtr);
+//        BufferPtr+=2;
+//    }
 }
 
 
