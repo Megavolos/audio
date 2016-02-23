@@ -18,6 +18,7 @@ void DTMFGenerator::prepareBufferToSend(QString str)
     unsigned int samples_per_frame=SampleRate/step;
    // Buffer.resize((str.length())*samples_per_frame);
     Buffer.resize(88200);
+    Buffer.fill(0);
     BufferPtr = reinterpret_cast<unsigned char *>(Buffer.data());
     for (int n = 0; n<str.length(); n++)
     {

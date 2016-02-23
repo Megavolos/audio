@@ -18,7 +18,7 @@ Audio::Audio(int sampleRate, QObject *parent)
 
     dtmfgenerator=new DTMFGenerator(17000,300,parent);
 
-    dtmfgenerator->prepareBufferToSend("0123456789");
+    dtmfgenerator->prepareBufferToSend("0123456789ABCDEF");
 
 }
 
