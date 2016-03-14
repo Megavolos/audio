@@ -7,7 +7,7 @@
 #include <QIODevice>
 #include "qmath.h"
 #include "qendian.h"
-
+#include <QLabel>
 class DTMFGenerator: public QIODevice
 {
     Q_OBJECT
@@ -19,8 +19,10 @@ class DTMFGenerator: public QIODevice
     int step;
     int fmin;
     int SampleRate;
+    int total_sent;
     unsigned int bufferpos;
 
+    QLabel* text;
     QByteArray Buffer;
     unsigned char* BufferPtr;
     QByteArray data;
@@ -28,11 +30,14 @@ class DTMFGenerator: public QIODevice
 
     void FillBuffer(char Data);
 
+
 public:
     DTMFGenerator(int Fmin, int Step, QObject *parent);
     void prepareBufferToSend(QString str);    
     qint64 readData(char *data, qint64 len);
     qint64 writeData(const char *data, qint64 len);
+     void setptr(QLabel* ptr);
+
 
     ~DTMFGenerator();
 

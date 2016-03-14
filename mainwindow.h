@@ -11,6 +11,7 @@
 #include "QDebug"
 #include "qmath.h"
 #include "audio.h"
+#include "dtmfgenerator.h"
 namespace Ui {
 class MainWindow;
 }

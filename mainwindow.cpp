@@ -8,7 +8,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     audio = new Audio(44100, this);
+    audio->setptr(ui->label);
     audio->start();
+
+
 
 }
 
